@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <title>
+ </title>
+ <head>
+ </head>
+ <body>
+     <div class="container" id="detail">
+     
+     </div>
+     <script>
+//const container1=document.querySelector("#container");
+const request=new XMLHttpRequest();
+request.open('GET',"api.txt")
+request.send()
+console.log("Hello1")
+
+request.addEventListener('load',function(){
+  console.log(this.responseText);
+  console.log("Hello2")
+  const data=JSON.parse(this.responseText);
+  console.log("Hello3")
+  console.log(data.userId,data.id,data.title,data.completed,data.name)
+ // console.log(data.count)
+ 
+ 
+ const   str =`
+ <h4>Name</h4><label>${data.name}</label>
+ <h4>userId</h4><label>${data.userId}</label>
+ <h4>id</h4><label>${data.id}</label>
+ <h4>title</h4><label>${data.title}</label>
+ <h4>completed</h4><label>${data.completed}</label>
+ `
+ 
+ document.getElementById('detail').innerHTML=str;
+ 
+})
+
+
+     </script>
+ </body>
+</html>

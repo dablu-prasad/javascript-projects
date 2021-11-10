@@ -1,0 +1,5 @@
+-->(website search) dad jokes api
+
+-->Promises (fullfilled/Rejected)
+
+-->same as Promises but async/await 
